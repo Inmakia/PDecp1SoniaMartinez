@@ -1,29 +1,30 @@
 package operationCollection;
 
-
 public class OperationHandler {
-    private Operation[] operations = new Operation[10];
+    final int SIZE = 10;
+
+    private Operation[] operations = new Operation[this.SIZE];
 
     public void add(Operation operator) {
-        for (int i = 0; i < operations.length; i++) {
-            if (operations[i] == null) {
-                operations[i] = operator;
-
-                return;
-            }
+        int i = 0;
+        while (i < operations.length && operations[i] != null) {
+            i++;
         }
-        return;
+        operations[i] = operator;
     }
 
     public void reset() {
-        for (int i = 0; i < operations.length; i++) {
-            operations[i] = null;
-        }
+        this.operations = new Operation[this.SIZE];
     }
 
-    // MAL DISEÑADO... MAL CODIFICADO
     public int total() {
-        return 0;
+        int total = 0;
+        for (Operation operation : this.operations) {
+            if (operation != null) {
+                total = total + operation.operate();
+            }
+        }
+        return total;
     }
 
 }
