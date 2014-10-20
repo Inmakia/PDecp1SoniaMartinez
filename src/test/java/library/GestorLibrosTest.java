@@ -2,23 +2,37 @@ package library;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Before;
 
-public class GestorLibrosTest {
+public class GestorLibrosTest extends GestorBibliotecaTest<Libro> {
+    
+    private GestorLibros gestor;
+    private Libro libro;
+    
+    @Before
+    public void data(){
+        this.gestor = new GestorLibros();
+        this.libro = new Libro("Libro1", "Autor1", 12345);
+    }
+    
 
-    @Test
-    public void testAltaLibro() {
-        fail("Not yet implemented");
+    @Override
+    public void testAlta() {
+        this.gestor.alta(libro);
+        assertTrue(this.gestor.getAll().contains(libro));
+        
     }
 
-    @Test
-    public void testBajaLibro() {
-        fail("Not yet implemented");
+    @Override
+    public void testBaja() {
+        this.gestor.alta(libro);
+        this.gestor.baja(libro);
+        assertFalse(this.gestor.getAll().contains(libro));
     }
 
-    @Test
+    @Override
     public void testGetAll() {
-        fail("Not yet implemented");
+        assertEquals(0, this.gestor.getAll().size());
     }
 
 }

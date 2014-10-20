@@ -1,29 +1,16 @@
 package library;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-public class GestorBibliotecaTest {
+public abstract class GestorBibliotecaTest<T> {
 
     @Test
-    public void testGestorBiblioteca() {
-        fail("Not yet implemented");
-    }
+    public abstract void testAlta();
 
     @Test
-    public void testAlta() {
-        fail("Not yet implemented");
-    }
+    public abstract void testBaja();
 
     @Test
-    public void testBaja() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetAll() {
-        fail("Not yet implemented");
-    }
+    public abstract void testGetAll();
 
 }
