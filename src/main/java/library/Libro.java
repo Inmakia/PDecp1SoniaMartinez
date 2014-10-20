@@ -6,19 +6,21 @@ public class Libro {
     private int isbn;
     
     public Libro(String titulo, String autor, int isbn) {
-        
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = isbn;
     }
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public String getAutor() {
-        return autor;
+        return this.autor;
     }
 
     public int getIsbn() {
-        return isbn;
+        return this.isbn;
     }
 
 }
