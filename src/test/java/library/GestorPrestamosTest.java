@@ -5,16 +5,19 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class GestorPrestamosTest extends GestorBibliotecaTest<Prestamo>{
     
     private GestorPrestamos gestor;
     private Prestamo prestamo;
+    private Libro libro;
     
     @Before
     public void data(){
         this.gestor = new GestorPrestamos();
-        this.prestamo = new Prestamo(new Usuario ("Usuario"), new Libro("Libro", "Autor", 12345));
+        this.libro = new Libro("Libro", "Autor", 12345);
+        this.prestamo = new Prestamo(new Usuario ("Usuario"), libro);
     }
 
     @Override
@@ -39,5 +42,10 @@ public class GestorPrestamosTest extends GestorBibliotecaTest<Prestamo>{
         assertEquals(2, this.gestor.getAll().size());
     }
 
+    @Test
+    public void testPrestado(){
+        this.gestor.alta(prestamo);
+        assertTrue(this.gestor.prestado(libro));
+    }
 
 }

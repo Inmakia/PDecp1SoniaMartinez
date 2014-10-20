@@ -9,23 +9,29 @@ public class Prestamo {
     private Calendar fechaInicio, fechaFin;
     
     public Prestamo (Usuario usuario, Libro libro) {
-        
+        this.usuario = usuario;
+        this.libro = libro;
+        Calendar cal = Calendar.getInstance();
+        this.fechaInicio = cal;
+        cal.add(Calendar.DATE, 15);
+        this.fechaFin = Calendar.getInstance();
+        cal.clear(Calendar.DATE);
     }
 
     public Usuario getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public Libro getLibro() {
-        return libro;
+        return this.libro;
     }
 
     public Calendar getFechaInicio() {
-        return fechaInicio;
+        return this.fechaInicio;
     }
 
     public Calendar getFechaFin() {
-        return fechaFin;
+        return this.fechaFin;
     }
     
     

@@ -2,6 +2,8 @@ package library;
 
 import static org.junit.Assert.*;
 
+import java.util.Calendar;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,6 +15,7 @@ public class PrestamoTest {
     
     @Before
     public void data() {
+        Calendar.getInstance().clear(Calendar.DATE);
         this.usuario  = new Usuario("Usuario");
         this.libro = new Libro("Titulo", "Autor", 12345);
         this.prestamo = new Prestamo(usuario, libro);
@@ -24,14 +27,35 @@ public class PrestamoTest {
         assertEquals(this.libro, this.prestamo.getLibro());
     }
 
-    @Test
-    public void testGetFechaInicio() {
-        fail("Not yet implemented");
-    }
 
     @Test
     public void testGetFechaFin() {
-        fail("Not yet implemented");
+        Calendar.getInstance().add(Calendar.DATE, 15);
+        assertEquals(Calendar.getInstance(), this.prestamo.getFechaFin());
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
