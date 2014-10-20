@@ -2,18 +2,21 @@ package library;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class UsuarioTest {
 
-    @Test
-    public void testUsuario() {
-        fail("Not yet implemented");
+    private Usuario usuario;
+
+    @Before
+    public void data() {
+        this.usuario = new Usuario("Nombre");
     }
 
     @Test
-    public void testGetName() {
-        fail("Not yet implemented");
+    public void testUsuario() {
+        assertEquals("Nombre", this.usuario.getName());
     }
 
 }

@@ -2,23 +2,26 @@ package library;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PrestamoTest {
+    
+    private Prestamo prestamo;
+    private Usuario usuario;
+    private Libro libro;
+    
+    @Before
+    public void data() {
+        this.usuario  = new Usuario("Usuario");
+        this.libro = new Libro("Titulo", "Autor", 12345);
+        this.prestamo = new Prestamo(usuario, libro);
+    }
 
     @Test
     public void testPrestamo() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetUsuario() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetLibro() {
-        fail("Not yet implemented");
+        assertEquals(this.usuario, this.prestamo.getUsuario());
+        assertEquals(this.libro, this.prestamo.getLibro());
     }
 
     @Test

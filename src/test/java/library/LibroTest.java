@@ -2,28 +2,23 @@ package library;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class LibroTest {
+    
+    private Libro libro;
+    
+    @Before
+    public void data() {
+        this.libro = new Libro("Titulo", "Autor", 12345);
+    }
 
     @Test
     public void testLibro() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetTitulo() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetAutor() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetIsbn() {
-        fail("Not yet implemented");
+        assertEquals("Titulo", this.libro.getTitulo());
+        assertEquals("Autor", this.libro.getAutor());
+        assertEquals(12345, this.libro.getIsbn());
     }
 
 }
