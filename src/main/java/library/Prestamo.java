@@ -11,11 +11,10 @@ public class Prestamo {
     public Prestamo (Usuario usuario, Libro libro) {
         this.usuario = usuario;
         this.libro = libro;
-        Calendar cal = Calendar.getInstance();
-        this.fechaInicio = cal;
-        cal.add(Calendar.DATE, 15);
+        this.fechaInicio = Calendar.getInstance();
+        Calendar.getInstance().add(Calendar.DATE, 15);
         this.fechaFin = Calendar.getInstance();
-        cal.clear(Calendar.DATE);
+        Calendar.getInstance().clear();
     }
 
     public Usuario getUsuario() {
@@ -34,5 +33,9 @@ public class Prestamo {
         return this.fechaFin;
     }
     
+    @Override
+    public String toString() {
+        return "Prestamo [ " + this.getLibro().toString() + ", " + this.getUsuario().toString() + " ]";
+    }
     
 }

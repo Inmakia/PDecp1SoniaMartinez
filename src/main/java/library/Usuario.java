@@ -12,5 +12,8 @@ public class Usuario {
         return name;
     }
 
-
+    @Override
+    public String toString() {
+        return "Usuario [ " + this.getName() + " ]";
+    }
 }

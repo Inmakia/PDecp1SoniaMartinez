@@ -15,7 +15,7 @@ public class PrestamoTest {
     
     @Before
     public void data() {
-        Calendar.getInstance().clear(Calendar.DATE);
+        Calendar.getInstance().clear();
         this.usuario  = new Usuario("Usuario");
         this.libro = new Libro("Titulo", "Autor", 12345);
         this.prestamo = new Prestamo(usuario, libro);

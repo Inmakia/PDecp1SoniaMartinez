@@ -1,10 +1,11 @@
 package library;
 
 public class Libro {
-    
+
     private String titulo, autor;
+
     private int isbn;
-    
+
     public Libro(String titulo, String autor, int isbn) {
         this.titulo = titulo;
         this.autor = autor;
@@ -23,4 +24,8 @@ public class Libro {
         return this.isbn;
     }
 
+    @Override
+    public String toString() {
+        return "Libro [ Título: " + this.getTitulo() + ", Autor: " + this.getAutor() + ", ISBN: " + this.getIsbn() + "]";
+    }
 }
